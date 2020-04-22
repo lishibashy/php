@@ -5,10 +5,4 @@ class Usuario{
     private $deslogin;
     private $dessenha;
     private $dtcadastro;
-
-    
-
-
-
-
 }

@@ -1,4 +1,4 @@
-  <html>
+<html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
@@ -9,7 +9,7 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Cidade', 'População', { role: 'annotation'}],
+          ['Cidade', 'População'],
 
           <?php
           include 'conexao.php';
@@ -20,7 +20,7 @@
             $cidade = $dados['cidade'];
             $populacao = $dados['populacao'];
           ?>
-          [ '<?php echo $cidade ?>', <?php echo $populacao ?>,  <?php echo $populacao ?> ],
+          [ '<?php echo $cidade ?>', <?php echo $populacao ?> ],
 
 
         <?php } ?>
@@ -28,18 +28,17 @@
         ]);
 
         var options = {
-          title: 'Cidades População',
-          //curveType: 'function',
+          title: 'Cidades',
           legend: { position: 'bottom' }
         };
 
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        var chart = new google.visualization.PieChart(document.getElementById('graficoPizza'));
 
         chart.draw(data, options);
       }
     </script>
   </head>
   <body>
-    <div id="curve_chart" style="width: 1000px; height: 400px"></div>
+    <div id="graficoPizza" style="width: 450px; height: 400px"></div>
   </body>
 </html>

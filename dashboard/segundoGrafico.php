@@ -37,7 +37,7 @@
 
          var options = 
          {
-            title: "Cidades População",
+            title: "Segundo Gráfico",
             width: 600,
             height: 400,
             bar: {groupWidth: "80%"},
@@ -49,6 +49,6 @@
   </script>
   </head>
   <body>
-    <div id="graficoColuna" style="width: 900px; height: 500px"></div>
+    <div id="graficoColuna" style="height: 500px"></div>
   </body>
 </html>

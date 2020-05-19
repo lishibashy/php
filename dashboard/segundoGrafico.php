@@ -8,7 +8,7 @@
 
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Cidade', 'População', { role: 'annotation'}],
+          ['Cidade', 'População', { role: 'style'}],
 
           <?php
           include 'conexao.php';
@@ -19,26 +19,36 @@
             $cidade = $dados['cidade'];
             $populacao = $dados['populacao'];
           ?>
-          [ '<?php echo $cidade ?>', <?php echo $populacao ?>,  <?php echo $populacao ?> ],
+          [ '<?php echo $cidade ?>', <?php echo $populacao ?>, '#blue' ],
 
 
         <?php } ?>
 
         ]);
 
-        var options = {
-          title: 'Cidades População',
-          //curveType: 'function',
-          legend: { position: 'bottom' }
-        };
+      var view = new google.visualization.DataView(data);
+                        view.setColumns([0, 1,
+                        { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" 
+                         },
+                        2]);
 
-        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
-
-        chart.draw(data, options);
-      }
-    </script>
+         var options = 
+         {
+            title: "Cidades População",
+            width: 600,
+            height: 400,
+            bar: {groupWidth: "80%"},
+            legend: { position: "bottom" },
+          };
+      var chart = new google.visualization.ColumnChart(document.getElementById("graficoColuna"));
+      chart.draw(view, options);
+  }
+  </script>
   </head>
   <body>
-    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+    <div id="graficoColuna" style="width: 900px; height: 500px"></div>
   </body>
 </html>

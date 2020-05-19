@@ -49,6 +49,6 @@
   </script>
   </head>
   <body>
-    <div id="graficoColuna" style="height: 500px"></div>
+      <div id="graficoColuna" style="height: 500px"></div>
   </body>
 </html>

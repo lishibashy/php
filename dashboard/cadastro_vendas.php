@@ -12,22 +12,22 @@
 
     <div class="container">
         <h2> Cadastro de Vendas</h2>
-        <form action="">
+        <form action="cadastrar_vendas.php" method="POST">
                 <div class="form-group">
                     <label>Selecione o mês</label>
-                    <select class="form-control">
-                        <option value="">Jan</option>
-                        <option value="">Fev</option>
-                        <option value="">Mar</option>
-                        <option value="">Abr</option>
-                        <option value="">Mai<a</option>
-                        <option value="">Jun</option>
-                        <option value="">Jul</option>
-                        <option value="">Ago</option>
-                        <option value="">Set</option>
-                        <option value="">Out</option>
-                        <option value="">Nov</option>
-                        <option value="">Dez</option>
+                    <select class="form-control" name="mes">
+                        <option value="Jan">Jan</option>
+                        <option value="Fev">Fev</option>
+                        <option value="Mar">Mar</option>
+                        <option value="Abr">Abr</option>
+                        <option value="Mai">Mai<a</option>
+                        <option value="Jun">Jun</option>
+                        <option value="Jul">Jul</option>
+                        <option value="Ago">Ago</option>
+                        <option value="Set">Set</option>
+                        <option value="Out">Out</option>
+                        <option value="Nov">Nov</option>
+                        <option value="Dez">Dez</option>
                     </select>
                 </div>
                     <div class="form-group">
@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-group">
                         <label>Digite o valor</label>
-                        <input type="number" name="valor" id="" class="form-control">
+                        <input type="numeric" name="valor" id="" class="form-control">
                     </div>
                     <div style="text-align: right">
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
